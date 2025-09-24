@@ -181,7 +181,6 @@ def selecao():
                 # Proxima tela
                 batalha()
                 
-            
             pressionou = False
 
         # Render
@@ -381,6 +380,10 @@ def batalha():
         if state_atacando:
             if indice_inimigos == 1:
                 rect_alvo = img_cursor_inimigo.get_rect(center=(inimigo1.x_pos, inimigo1.y_pos - 110))
+                # Gerar os textos dessa forma pode comprometer a performance do jogo
+                # Aqui, a cada loop o texto será re-gerado, o que é bastante custoso compucionalmente
+                # É recomendado carregar imagens e gerar textos FORA do while
+                # Tente arrumar um jeito de corrigir esse erro definindo os textos somente uma unica vez
                 vida_inim = fonte.render(f"{inimigo1.vida}/{inimigo1.vidamax}", True, "black")
                 rect_texto = vida_inim.get_rect(center=(inimigo1.x_pos, inimigo1.y_pos - 80))
             if indice_inimigos == 2:
