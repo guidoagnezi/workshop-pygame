@@ -10,6 +10,8 @@
 import pygame
 
 # 1 - Cabeçalho
+pygame.init()
+
 clock = pygame.time.Clock()
 fps = 60
 
@@ -17,6 +19,7 @@ largura = 1024
 altura = 768
 
 janela = pygame.display.set_mode((largura, altura))
+pygame.display.set_caption("Sessão 0")
 
 # 3 - Desenho de Imagem
 img_personagem = pygame.image.load("imagem/personagem/amigo/0.png").convert_alpha()

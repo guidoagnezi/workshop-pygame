@@ -15,6 +15,8 @@ import pygame
 import botao as bt
 import personagem as ps
 
+pygame.init()
+
 clock = pygame.time.Clock()
 fps = 60
 
@@ -22,6 +24,7 @@ largura = 1024
 altura = 768
 
 janela = pygame.display.set_mode((largura, altura))
+pygame.display.set_caption("Sessão 1")
 
 # 2 - Imagem de fundo
 img_fundo_background = pygame.image.load("imagem/fundo/selecao_fundo.webp").convert_alpha() # Atencao ao formato do arquivo

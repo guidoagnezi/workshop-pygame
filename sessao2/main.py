@@ -19,6 +19,7 @@ largura = 1024
 altura = 768
 
 janela = pygame.display.set_mode((largura, altura))
+pygame.display.set_caption("Sessão 2")
 
 # 2 - Hud de Batalha
 pygame.font.init()
@@ -235,6 +236,8 @@ img_cursor_inimigo = pygame.image.load("imagem/fundo/alvo.png")
 ordem = []
 
 def atacar(atacante, defensor):
+    # A equação de dano está muito simples
+    # Altere-a para que fique mais interessante!
     dano = atacante.ataque - defensor.defesa
 
     if dano < 0:
@@ -354,7 +357,8 @@ def batalha():
                 cooldown_count += 1     
 
         # Render
-
+        # O plano de fundo é apenas uma tela branca
+        # Tente implementar um cenário mais elaborado!
         janela.fill("white")
         
         # Desenhando os personagens na tela
