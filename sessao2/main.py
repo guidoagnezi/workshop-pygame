@@ -56,7 +56,7 @@ bt_go = bt.Button(img_go, 360, 635, 6, img_go_verde)
 
 # Aqui, declaramos a imagem e o retangulo da imagem para servir de icone aos botoes.
 # A declaração do retangulo é opcional.
-# Aqui foi utilizado para centralizar corretamente a imagem do personagem e do botao.
+# Aqui, o retangulo foi utilizado para centralizar corretamente a imagem do personagem e do botao.
 # Quando queremos que a origem do render seja no centro da imagem, 
 # declaramos um rect a partir das dimensões da imagem
 # e indicamos seu centro (center = (x, y)).
@@ -259,6 +259,7 @@ def batalha():
     indice_botoes = 1
     indice_inimigos = 1
 
+    # Estados que serão alternados durante a batalha
     state_atacando = False
     state_vezJogador = True
     state_novoTurno = False
@@ -345,7 +346,7 @@ def batalha():
 
                 pressionou = False
         # Vez do inimigo
-        # Aqui eles selecionarão um personagem do jogador aleatorio para atacar somente, mesmo se ele já estiver morto
+        # Aqui eles selecionarão um personagem do jogador aleatorio para atacar, mesmo se ele já estiver morto
         # Experimente com o código e tente aprimorá-lo vocÊ mesmo
         # Faça que os inimigos posso tomar outras ações durante o turno deles para deixar o jogo mais desafiador
         if not state_novoTurno and not state_vezJogador:  
@@ -385,7 +386,7 @@ def batalha():
             if indice_inimigos == 1:
                 rect_alvo = img_cursor_inimigo.get_rect(center=(inimigo1.x_pos, inimigo1.y_pos - 110))
                 # Gerar os textos dessa forma pode comprometer a performance do jogo
-                # Aqui, a cada loop o texto será re-gerado, o que é bastante custoso compucionalmente
+                # Aqui, a cada loop o texto será re-gerado, o que é bastante custoso computacionalmente
                 # É recomendado carregar imagens e gerar textos FORA do while
                 # Tente arrumar um jeito de corrigir esse erro definindo os textos somente uma unica vez
                 vida_inim = fonte.render(f"{inimigo1.vida}/{inimigo1.vidamax}", True, "black")
